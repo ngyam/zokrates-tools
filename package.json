@@ -1,0 +1,49 @@
+{
+  "name": "zokrates-tools",
+  "version": "0.0.0",
+  "description": "ZoKrates convenience CL tools and scripts.",
+  "main": "dist/js/index.js",
+  "types": "dist/js/index.d.ts",
+  "bin": {
+    "zoktools": "dist/js/index.js"
+  },
+  "dependencies": {
+    "patch-package": "^6.0.2",
+    "typescript": "^3.3.1",
+    "web3": "1.0.0-beta.37",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.21",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "yargs": {
+    "parse-numbers": false
+  },
+  "scripts": {
+    "test": "mocha",
+    "prebuild": "rm -rf dist/js",
+    "build": "node_modules/typescript/bin/tsc",
+    "start": "node dist/js/index.js",
+    "buildstart": "node_modules/typescript/bin/tsc && node dist/js/index.js",
+    "postinstall": "patch-package",
+    "container": "docker run -ti zokrates/zokrates:latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngyam/zokrates-tools.git"
+  },
+  "keywords": [
+    "zokrates",
+    "tool",
+    "scripts",
+    "CL"
+  ],
+  "author": "Adam Nagy <ngy.am.zs@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngyam/zokrates-tools/issues"
+  },
+  "homepage": "https://github.com/ngyam/zokrates-tools#readme"
+}
